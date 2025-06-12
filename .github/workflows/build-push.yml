@@ -44,6 +44,8 @@ jobs:
           build-args: |
             ZEPHYR_SDK_TOOLCHAINS=-t ${{ matrix.toolchain.arch }}
             ZEPHYR_SDK_VERSION=${{ matrix.sdk }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
   archs:
     needs: [arm]
@@ -87,3 +89,5 @@ jobs:
           build-args: |
             ZEPHYR_SDK_TOOLCHAINS=-t ${{ matrix.toolchain.arch }}
             ZEPHYR_SDK_VERSION=${{ matrix.sdk }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
